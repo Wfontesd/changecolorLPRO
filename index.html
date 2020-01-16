@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page Hellow World</title>
+</head>
+<body>
+<div>
+	<button onClick="startChangeColor()"> Start ChangeColor </button>
+</div>
+<div>
+	<button onClick="stopChangeColor()"> Stop ChangeColor </button>
+</div>
+
+<span>1</span>
+<span>2</span>
+
+
+<footer>
+<link rel="stylesheet" type="text/css" href="style.css">
+</footer>
+</body>
+<script>
+var myTimer;
+var colorTab = ['red', 'blue', 'yellow','green'];
+function startChangeColor(){
+	myTimer = setInterval(changeColor,2000);
+}
+function changeColor(){
+	var count = Math.floor((Math.random() * 3));
+	document.body.style.backgroundColor=colorTab[count];
+}
+
+function stopChangeColor(){
+	clearInterval(myTimer);
+}
+</script>
+</html>
